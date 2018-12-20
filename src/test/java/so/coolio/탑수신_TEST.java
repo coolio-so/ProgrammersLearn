@@ -2,7 +2,7 @@ package so.coolio;
 
 import org.junit.Test;
 
-public class TopReceive {
+public class 탑수신_TEST {
     @Test
     public void 탑_수신_테스트(){
         int[] heights = {6, 9, 5, 7, 4};
