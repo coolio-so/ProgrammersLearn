@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class ConfirmDate {
+public class 날짜확인_TEST {
     @Test
     public void 날짜_확인_테스트(){
         int a = 5;
