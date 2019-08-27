@@ -1,4 +1,4 @@
-package so.coolio;
+package so.coolio.sort;
 
 import java.util.Arrays;
 
