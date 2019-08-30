@@ -60,7 +60,6 @@ public class 전화번호_목록_TEST {
 			}
 		}
 		
-		
 		System.err.println(answer);
 		
 		
