@@ -35,3 +35,5 @@ local.properties
 .tern-project
 .springBeans
 .recommenders/
+.idea/
+*.iml
