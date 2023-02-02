@@ -1,5 +1,7 @@
 package so.coolio;
 
+import java.util.stream.IntStream;
+
 import org.junit.Test;
 
 public class 주식가격_TEST {
@@ -41,8 +43,6 @@ public class 주식가격_TEST {
             answer[i] = sec;
         }
 
-        for(int i : answer){
-            System.out.print(i);
-        }
+        IntStream.of(answer).forEach(System.err::println);
     }
 }
