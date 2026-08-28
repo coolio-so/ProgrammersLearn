@@ -2,26 +2,22 @@ package so.coolio;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class 베스트_앨범_TEST {
     @Test
     public void BestAlbumTDD() {
-        String[] genres = {"classic", "pop", "classic", "classic", "pop"};
-        int[] plays = {500, 600, 150, 800, 2500};
+        String[] genres = {"classic", "pop", "classic", "classic", "pop", "classic", "pop", "classic", "classic", "pop"};
+        int[] plays = {500, 600, 150, 800, 2500, 504, 601, 130, 801, 2520};
         Map<String, Music> map = new HashMap<>();
 
         for(int idx = 0; idx < genres.length; idx++) {
@@ -29,16 +25,19 @@ public class 베스트_앨범_TEST {
             map.putIfAbsent(gen, new Music());
             map.get(gen).addItem(plays[idx], idx);
             map.get(gen).addTotalPlay(plays[idx]);
-        } 
+        }
 
         map.entrySet()
            .stream()
-           .sorted(Map.Entry.comparingByValue())
-           .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new))
-           .forEach(System.out::println);
+           .sorted(Map.Entry.comparingByValue((o1, o2) -> o2.getTotalPlay() - o1.getTotalPlay()))
+           .findFirst()
+           .ifPresent(item -> {
+        	   System.err.println(item.getValue().getItems().subList(0, 2));
+                System.err.println(item.getValue());
+           });
     }
 
-    
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
