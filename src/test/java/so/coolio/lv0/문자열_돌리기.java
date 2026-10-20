@@ -23,5 +23,7 @@ public class 문자열_돌리기 {
         if(a.length() >= 1 && a.length() <= 10){
             Stream.of(a.split("")).forEach(System.out::println);
         }
+
+        sc.close();
     }
 }

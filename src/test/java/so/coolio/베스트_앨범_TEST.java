@@ -7,7 +7,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +39,6 @@ public class 베스트_앨범_TEST {
 
     @Data
     @NoArgsConstructor
-    @AllArgsConstructor
     class Music {
         private int totalPlay = 0;
         private List<Item> items = new ArrayList<>();
